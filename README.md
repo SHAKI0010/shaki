@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Game sxs</title>
+<title>Game sxs</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ================== پایه ================== */
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
-  margin:0;
-  font-family:Tahoma,sans-serif;
-  background: linear-gradient(120deg,#0b0c1c,#1a1a2e);
+  font-family:'Roboto',sans-serif;
+  background: url("https://cdn.jsdelivr.net/gh/SHAKI0010/apk-files-shaki@main/5936243320109599834.jpg") center/cover no-repeat fixed;
   color:#fff;
   text-align:center;
   overflow-x:hidden;
@@ -17,55 +17,49 @@ body{
 header{
   padding:20px;
   font-size:28px;
-  font-weight:bold;
-  text-shadow:0 0 10px #0ff;
+  font-weight:700;
+  font-family:'Orbitron', sans-serif;
+  background: linear-gradient(90deg,#00f,#0ff,#0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* ================== Top Box ================== */
+/* ================== کادر تصاویر مرحله ================== */
 .top-box{
-  width:100%;
-  height:250px; /* برای موبایل بهینه شد */
-  background:url("https://cdn.jsdelivr.net/gh/SHAKI0010/apk-files-shaki@main/5936243320109599784.jpg") center top/cover no-repeat;
-  border-bottom:3px solid #0ff;
-  position:relative;
+  width:90%;
+  max-width:400px;
+  height:220px;
+  margin:0 auto 30px auto;
+  border-radius:25px;
   overflow:hidden;
-}
-
-/* خطوط نور متحرک */
-.top-box::before{
-  content:'';
-  position:absolute;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:linear-gradient(90deg, rgba(0,255,255,0.1) 0%, rgba(255,0,255,0.1) 50%, rgba(0,255,0,0.1) 100%);
-  animation: lightMove 6s linear infinite;
-}
-@keyframes lightMove{
-  0%{transform:translateX(-100%);}
-  100%{transform:translateX(100%);}
+  border:3px solid #0ff;
+  box-shadow:0 0 20px #0ff inset,0 0 40px #0ff;
+  transition: background-image 0.5s ease;
+  background-size: cover;
+  background-position: center;
 }
 
 /* ================== مراحل ================== */
 .step{
   display:none;
-  padding:25px 15px;
+  padding:15px;
   opacity:0;
   transform:translateY(30px);
-  transition: all 0.6s ease;
+  transition: all 0.5s ease;
 }
 .step.active{
   display:block;
   opacity:1;
   transform:translateY(0);
 }
-
-/* عنوان مرحله */
 h2{
-  margin-bottom:25px;
-  text-shadow:0 0 15px #0ff;
+  margin-bottom:20px;
+  font-family:'Orbitron',sans-serif;
+  color:#0ff;
+  text-shadow:0 0 10px #0ff;
 }
 
-/* ================== گزینه‌ها ================== */
+/* گزینه‌ها */
 .options{
   display:flex;
   flex-wrap:wrap;
@@ -76,181 +70,208 @@ h2{
   width:80px;
   height:80px;
   line-height:80px;
-  font-size:20px;
+  font-size:18px;
   border-radius:16px;
   cursor:pointer;
-  border:2px solid #334155;
+  border:2px solid #0ff;
+  background: linear-gradient(145deg,#111,#222);
   color:#fff;
-  background:linear-gradient(135deg,#111827,#1f2937);
-  animation: rainbowNeon 4s linear infinite;
-  transition:0.3s;
+  font-weight:500;
+  transition:0.3s all;
 }
 .option:hover{
   transform:scale(1.1);
-  box-shadow:0 0 20px #0ff,0 0 40px #0ff;
+  background: linear-gradient(145deg,#0ff,#0cc);
+  color:#000;
 }
 .option.selected{
   background:#0ff;
   color:#000;
-  box-shadow:0 0 30px #0ff,0 0 60px #0ff;
+  border-color:#0ff;
+  box-shadow:0 0 25px #0ff;
 }
 
-/* نئون متحرک گزینه‌ها */
-@keyframes rainbowNeon{
-  0%{border-color:#ff0000; box-shadow:0 0 5px #ff0000;}
-  16%{border-color:#ff8800; box-shadow:0 0 10px #ff8800;}
-  33%{border-color:#ffff00; box-shadow:0 0 15px #ffff00;}
-  50%{border-color:#00ff00; box-shadow:0 0 20px #00ff00;}
-  66%{border-color:#00ffff; box-shadow:0 0 25px #00ffff;}
-  83%{border-color:#0000ff; box-shadow:0 0 30px #0000ff;}
-  100%{border-color:#ff00ff; box-shadow:0 0 35px #ff00ff;}
-}
-
-/* ================== دکمه ادامه ================== */
+/* دکمه ادامه */
 button{
-  margin-top:25px;
-  padding:16px 50px;
-  font-size:20px;
+  margin-top:20px;
+  padding:14px 40px;
+  font-size:18px;
   border:none;
-  border-radius:12px;
+  border-radius:14px;
   cursor:pointer;
   display:none;
-  color:#fff;
-  background: linear-gradient(135deg,#ff3c00,#ffdd00,#ff3c00);
-  position:relative;
-  overflow:hidden;
-  box-shadow:0 0 15px #ff3c00,0 0 30px #ffdd00;
-  transition:0.3s;
+  color:#000;
+  background: linear-gradient(135deg,#00ffff,#00ccff,#00ffff);
+  box-shadow:0 0 15px #00ffff,0 0 30px #0ff inset;
+  font-weight:600;
+  transition:0.3s all;
 }
 button.show{display:inline-block;}
-button::before{
-  content:'';
-  position:absolute;
-  top:-50%; left:-50%;
-  width:200%; height:200%;
-  background: radial-gradient(circle, rgba(255,140,0,0.5), rgba(255,0,0,0));
-  animation: flame 1s linear infinite;
-  z-index:-1;
-}
 button:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 25px #ff3c00,0 0 50px #ffdd00;
-}
-@keyframes flame{
-  0%{transform:translate(0,0) scale(1);}
-  50%{transform:translate(10px,-10px) scale(1.1);}
-  100%{transform:translate(0,0) scale(1);}
+  transform:scale(1.05);
+  box-shadow:0 0 25px #0ff,0 0 50px #0ff inset;
 }
 
-/* ================== اسلایدر سن ================== */
+/* اسلایدر سن */
 input[type=range]{
   -webkit-appearance:none;
   width:90%;
-  max-width:280px;
+  max-width:300px;
   height:14px;
   border-radius:7px;
-  background:#334155;
+  background:#333;
   outline:none;
   margin:20px 0;
 }
 input[type=range]::-webkit-slider-thumb{
   -webkit-appearance:none;
-  width:40px; height:40px; border-radius:50%;
+  width:36px;height:36px;border-radius:50%;
   background:#0ff;
   cursor:pointer;
-  box-shadow:0 0 20px #0ff;
+  box-shadow:0 0 15px #0ff;
 }
-input[type=range]:active::-webkit-slider-thumb{transform:scale(1.2);}
 input[type=range]::-moz-range-thumb{
-  width:40px;height:40px;border-radius:50%;
+  width:36px;height:36px;border-radius:50%;
   background:#0ff;
   cursor:pointer;
-  box-shadow:0 0 20px #0ff;
+  box-shadow:0 0 15px #0ff;
 }
 #ageDisplay{
-  font-size:26px;
-  font-weight:bold;
+  font-size:22px;
+  font-weight:700;
+  color:#0ff;
   margin-top:10px;
-  animation: rainbowNeonText 4s linear infinite;
-}
-@keyframes rainbowNeonText{
-  0%{color:#ff0000; text-shadow:0 0 5px #ff0000;}
-  16%{color:#ff8800; text-shadow:0 0 10px #ff8800;}
-  33%{color:#ffff00; text-shadow:0 0 15px #ffff00;}
-  50%{color:#00ff00; text-shadow:0 0 20px #00ff00;}
-  66%{color:#00ffff; text-shadow:0 0 25px #00ffff;}
-  83%{color:#0000ff; text-shadow:0 0 30px #0000ff;}
-  100%{color:#ff00ff; text-shadow:0 0 35px #ff00ff;}
 }
 
-/* ================== دکمه دانلود ================== */
-.download-btn{
-  background:#38bdf8;
+/* کادر دانلود */
+.download-box{
+  position:relative;
+  background: linear-gradient(145deg,#0ff,#00ccff);
+  padding:25px 20px;
+  border-radius:25px;
+  box-shadow:0 0 40px #0ff,0 0 80px #0ff inset;
+  margin:30px auto;
+  text-align:center;
+  overflow:hidden;
+  transition:0.3s all;
+}
+.download-box:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 50px #0ff,0 0 100px #0ff inset;
+}
+.download-box p{
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:20px;
   color:#000;
-  box-shadow:0 0 25px #38bdf8;
-  display:inline-block;
-  margin-top:30px;
-  animation: btnGlow 1s infinite alternate;
+  text-shadow:0 0 5px #fff;
 }
-@keyframes btnGlow{
-  0%{ box-shadow:0 0 10px #22c55e;}
-  50%{ box-shadow:0 0 25px #38bdf8;}
-  100%{ box-shadow:0 0 40px #0ff;}
+.download-btn{
+  background:#fff;
+  color:#0ff;
+  padding:14px 40px;
+  font-size:18px;
+  border-radius:14px;
+  text-decoration:none;
+  display:inline-block;
+  font-weight:700;
+  box-shadow:0 0 25px #0ff;
+  transition:0.3s all;
+  position:relative;
+  z-index:2;
+}
+.download-btn:hover{
+  background:#0cc;
+  color:#000;
+  box-shadow:0 0 35px #0ff,0 0 70px #0ff inset;
 }
 
-/* ================== ریسپانسیو موبایل ================== */
+/* ذرات متحرک */
+.particles{
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:1;
+}
+.particles span{
+  position:absolute;
+  display:block;
+  width:8px; height:8px;
+  background:#0ff;
+  border-radius:50%;
+  animation:particleMove linear infinite;
+  opacity:0.7;
+}
+.particles span:nth-child(1){top:10%; left:20%; animation-duration:6s;}
+.particles span:nth-child(2){top:30%; left:50%; animation-duration:8s;}
+.particles span:nth-child(3){top:60%; left:80%; animation-duration:5s;}
+.particles span:nth-child(4){top:80%; left:40%; animation-duration:7s;}
+.particles span:nth-child(5){top:50%; left:10%; animation-duration:6.5s;}
+@keyframes particleMove{
+  0%{transform:translate(0,0) scale(1);}
+  50%{transform:translate(200px,300px) scale(1.5);}
+  100%{transform:translate(-200px,600px) scale(1);}
+}
+
+/* ریسپانسیو موبایل */
 @media(max-width:480px){
-  header{font-size:24px; padding:15px;}
-  .option{width:70px;height:70px;line-height:70px;font-size:18px;}
+  header{font-size:24px;padding:15px;}
+  .top-box{height:180px;border-radius:20px;}
+  .option{width:70px;height:70px;line-height:70px;font-size:16px;}
   input[type=range]{width:95%;}
-  #ageDisplay{font-size:22px;}
-  .top-box{height:200px;}
-  button{padding:14px 40px; font-size:18px;}
+  #ageDisplay{font-size:20px;}
+  button, .download-btn{padding:12px 35px;font-size:16px;}
+  .download-box{padding:20px;}
+  .download-box p{font-size:16px;}
 }
 </style>
 </head>
 <body>
 
 <header>🎮 Game sxs 🥵</header>
-<div class="top-box"></div>
+<div class="top-box" id="topBox"></div>
 
 <!-- مرحله 1 -->
 <div class="step active" id="step1">
-<h2>1/5<br>سبک بازی خود را انتخاب کنید</h2>
-<div class="options">
-<div class="option" onclick="selectOption(this,1)">گی</div>
-<div class="option" onclick="selectOption(this,1)">لزبین</div>
-<div class="option" onclick="selectOption(this,1)">کلاسیک</div>
-<div class="option" onclick="selectOption(this,1)">تریسام</div>
-<div class="option" onclick="selectOption(this,1)">خشن</div>
-<div class="option" onclick="selectOption(this,1)">ریلکس</div>
-</div>
-<button id="btn1" onclick="nextStep(2)">ادامه</button>
+  <h2>1/4<br>سبک بازی خود را انتخاب کنید</h2>
+  <div class="options">
+    <div class="option" onclick="selectOption(this,1)">کلاسیک</div>
+    <div class="option" onclick="selectOption(this,1)">ریلکس</div>
+    <div class="option" onclick="selectOption(this,1)">خشن</div>
+  </div>
+  <button id="btn1" onclick="nextStep(2,'https://cdn.jsdelivr.net/gh/SHAKI0010/apk-files-shaki@main/5936243320109599833.jpg')">ادامه</button>
 </div>
 
 <!-- مرحله 2 -->
 <div class="step" id="step2">
-<h2>2/5<br>لطفا جنسیت خود را انتخاب کنید</h2>
-<div class="options">
-<div class="option" onclick="selectOption(this,2)">مرد</div>
-<div class="option" onclick="selectOption(this,2)">زن</div>
-</div>
-<button id="btn2" onclick="nextStep(3)">ادامه</button>
+  <h2>2/4<br>جنسیت خود را انتخاب کنید</h2>
+  <div class="options">
+    <div class="option" onclick="selectOption(this,2)">مرد</div>
+    <div class="option" onclick="selectOption(this,2)">زن</div>
+  </div>
+  <button id="btn2" onclick="nextStep(3,'https://cdn.jsdelivr.net/gh/SHAKI0010/apk-files-shaki@main/5936243320109599835.jpg')">ادامه</button>
 </div>
 
 <!-- مرحله 3 -->
 <div class="step" id="step3">
-<h2>3/5<br>سن خود را انتخاب کنید</h2>
-<input type="range" id="age" min="16" max="70" value="25" oninput="updateAge(this.value)">
-<div id="ageDisplay">25 سال</div>
-<button id="btn3" onclick="nextStep(4)">ادامه</button>
+  <h2>3/4<br>سن خود را انتخاب کنید</h2>
+  <input type="range" id="age" min="16" max="70" value="25" oninput="updateAge(this.value)">
+  <div id="ageDisplay">25 سال</div>
+  <button id="btn3" onclick="nextStep(4,'https://cdn.jsdelivr.net/gh/SHAKI0010/apk-files-shaki@main/5936243320109599836.jpg')">ادامه</button>
 </div>
 
 <!-- مرحله 4 -->
 <div class="step" id="step4">
-<h2>4/5</h2>
-<p>برای اجرای بازی، فایل بازی را دانلود کنید</p>
-<button class="download-btn" onclick="downloadGame()">دانلود بازی</button>
+  <h2>4/4</h2>
+  <div class="download-box">
+    <div class="particles">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <p>برای اجرای بازی، فایل بازی را دانلود کنید</p>
+    <a class="download-btn" href="https://cdn.jsdelivr.net/gh/SHAKI0010/apk-files-shaki@main/Game_sxs_1.apk" download>دانلود بازی</a>
+  </div>
 </div>
 
 <script>
@@ -259,19 +280,21 @@ function selectOption(el,step){
   el.classList.add('selected');
   document.getElementById('btn'+step).classList.add('show');
 }
-function nextStep(step){
+function nextStep(step,img){
   const current=document.querySelector('.step.active');
   current.classList.remove('active');
-  setTimeout(()=>{document.getElementById('step'+step).classList.add('active');},100);
+  setTimeout(()=>{
+    document.getElementById('step'+step).classList.add('active');
+    document.getElementById('topBox').style.backgroundImage = 'url('+img+')';
+  },150);
 }
 function updateAge(val){
   document.getElementById('ageDisplay').innerText=val+" سال";
   if(val>=16 && val<=70){document.getElementById('btn3').classList.add('show');}
   else{document.getElementById('btn3').classList.remove('show');}
 }
-function downloadGame(){
-  window.location.href="https://cdn.jsdelivr.net/gh/SHAKI0010/apk-files-shaki@main/Game_sxs_1.apk";
-}
+// تصویر مرحله اول
+document.getElementById('topBox').style.backgroundImage = 'url(https://cdn.jsdelivr.net/gh/SHAKI0010/apk-files-shaki@main/5936111855455636287.jpg)';
 </script>
 
 </body>
